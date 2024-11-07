@@ -220,7 +220,7 @@ nav ul span {
   margin: 0.5rem 0;
 }
 #news .scroll-container article ul li:first-child {
-  color: #373737; /* Updated colour for more contrast, making it easier to read */
+  color: #a6a6a6; /* Updated colour for more contrast, making it easier to read */
   text-transform: uppercase;
 }
 #news h2 {
