@@ -349,6 +349,11 @@ footer{
             color: #000;
         }
     }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
 }
 /* Hva: Styler footeren med padding og sentrering av innhold.
    Hvorfor: For å skape et klart avslutningselement nederst på siden.
