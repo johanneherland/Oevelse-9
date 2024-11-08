@@ -21,7 +21,11 @@
         <header> <!-- Bruker tabindex="1" her for å følge uutilsynets forslag om å 
             "avslutte den prioriterte rekkefølgen med et objekt som ligger før alle objekter som ikke har prioritering"
             Jeg forsøkte også å bruke accesskey="s" for at bruker alltid skal ha en enkel måte å komme tilbake til toppen av siden, 
-            men det virker ikke som at dette funkerer som planlagt i praksis -->
+            men det virker ikke som at dette funkerer som planlagt i praksis.
+            Noterer også at Lighthouse kommenterer at man ikke skal bruke tabindex >1 og at dette kan være forvirrende for bruker, så mulig jeg heller 
+            bør fjerne denne? Jeg merker jeg er usikker på hva som blir riktig bruk av tabindex og finner ikke helt svar i kildene,
+            skal tabindex være for at bruker skal kunne navigere de INTERAKTIVE delene av siden, eller skal det brukes for at bruker 
+            skal innom ALLE elementer på siden? Hvis det er alle, og ikke bare interaktive slik jeg først forstod det, så må jeg gjøre dette på nytt :) -->
             <a href="index.html" class="logo" tabindex="1" accesskey="s"><img src="https://picsum.photos/id/40/100/100" alt="navn-på-bedrift logo"></a> <!-- Logo-link for rask navigering til hjemmesiden, endret alt-tekst -->
         </header>
         <nav>
