@@ -20,13 +20,11 @@
     <div id="container"> <!-- Hovedbeholder for hele innholdet på siden, gjør det enklere å style hele siden -->
         <header> <!-- Bruker tabindex="1" her for å følge uutilsynets forslag om å 
             "avslutte den prioriterte rekkefølgen med et objekt som ligger før alle objekter som ikke har prioritering"
-            Jeg forsøkte også å bruke accesskey="s" for at bruker alltid skal ha en enkel måte å komme tilbake til toppen av siden, 
-            men det virker ikke som at dette funkerer som planlagt i praksis.
-            Noterer også at Lighthouse kommenterer at man ikke skal bruke tabindex >1 og at dette kan være forvirrende for bruker, så mulig jeg heller 
+            Noterer at Lighthouse og WAVE kommenterer at man ikke skal bruke tabindex >1 og at dette kan være forvirrende for bruker, så mulig jeg heller 
             bør fjerne denne? Jeg merker jeg er usikker på hva som blir riktig bruk av tabindex og finner ikke helt svar i kildene,
             skal tabindex være for at bruker skal kunne navigere de INTERAKTIVE delene av siden, eller skal det brukes for at bruker 
             skal innom ALLE elementer på siden? Hvis det er alle, og ikke bare interaktive slik jeg først forstod det, så må jeg gjøre dette på nytt :) -->
-            <a href="index.html" class="logo" tabindex="1" accesskey="s"><img src="https://picsum.photos/id/40/100/100" alt="navn-på-bedrift logo"></a> <!-- Logo-link for rask navigering til hjemmesiden, endret alt-tekst -->
+            <a href="index.html" class="logo" tabindex="1"><img src="https://picsum.photos/id/40/100/100" alt="navn-på-bedrift logo"></a> <!-- Logo-link for rask navigering til hjemmesiden, endret alt-tekst -->
         </header>
         <nav>
             <ul>
@@ -224,7 +222,7 @@
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
                 </article>
                 <article>
-                    <a href="0">
+                    <a href="#">
                     <img src="https://picsum.photos/id/152/400/400" alt="lilla blomst foto"> <!-- Bilde for populær kategori, valgte et spesifikt bilde og la til alt tekst -->
                     </a>
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
@@ -232,10 +230,7 @@
             </section>
         </main>
         <footer>
-            <!-- satt footer-logo til tabindex="-1" for å hoppe over, tanken her var at hvis accesskey hadde fungert hadde det vært 
-             dobbelt opp med muligheter for å navigere tilbake til toppen av siden og stoppet innom denne lenken hadde vært repetetivt og kanskje forvirrende 
-             iom at dette ikke nødvendigvis er en veldig tydelig lenke tilbake til start -->
-            <a href="index.html" class="logo" tabindex="-1"><img src="https://picsum.photos/id/40/100/100?grayscale" alt="navn-på-bedrift logo i gråtoner"></a> <!-- Gråtonelogo i bunnteksten som også peker til hjemmesiden, endret alt-tekst -->
+            <a href="index.html" class="logo"><img src="https://picsum.photos/id/40/100/100?grayscale" alt="navn-på-bedrift logo i gråtoner"></a> <!-- Gråtonelogo i bunnteksten som også peker til hjemmesiden, endret alt-tekst -->
             <p>Følg oss på sosiale medier!</p> <!--La til tekst for å gi informasjon om lenkenes funksjon-->
             <ul class="some"> <!-- Sosiale medier-ikoner -->
                 <li>
