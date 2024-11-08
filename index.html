@@ -10,9 +10,19 @@
     <title>UU</title> <!-- Sides tittel som vises i nettleserfanen -->
 </head>
 <body>
+    <nav class="skip"> <!-- skjult navigasjon for å holde en skip-lenke så brukere kan hoppe til hovedinnhold -->
+        <ul>
+            <li>
+            <a href="#welcome-banner">Hopp til hovedinnhold</a>
+            </li>
+        </ul>
+    </nav>
     <div id="container"> <!-- Hovedbeholder for hele innholdet på siden, gjør det enklere å style hele siden -->
-        <header>
-            <a href="index.html" class="logo"><img src="https://picsum.photos/id/40/100/100" alt="navn-på-bedrift logo"></a> <!-- Logo-link for rask navigering til hjemmesiden, endret alt-tekst -->
+        <header> <!-- Bruker tabindex="1" her for å følge uutilsynets forslag om å 
+            "avslutte den prioriterte rekkefølgen med et objekt som ligger før alle objekter som ikke har prioritering"
+            Jeg forsøkte også å bruke accesskey="s" for at bruker alltid skal ha en enkel måte å komme tilbake til toppen av siden, 
+            men det virker ikke som at dette funkerer som planlagt i praksis -->
+            <a href="index.html" class="logo" tabindex="1" accesskey="s"><img src="https://picsum.photos/id/40/100/100" alt="navn-på-bedrift logo"></a> <!-- Logo-link for rask navigering til hjemmesiden, endret alt-tekst -->
         </header>
         <nav>
             <ul>
@@ -51,15 +61,24 @@
             </section>
             <section id="categories">
                 <h2>Categories</h2> <!-- Underoverskrift for kategoriseksjonen -->
-                <article id="el">
-                    <h3>Elektronikk</h3> <!-- Kategoritittel for elektronikk; deler opp seksjonen i artikler for spesifikke kategorier -->
-                </article>
-                <article id="fashion">
+                <!-- Jeg gjorde alle elementer under jeg tenkte ville vært lenker til tomme lenker, på denne måten er de tilgjengelige via tab-navigasjon
+                 Jeg kunne eventuelt ha brukt tabindex her, men siden disse elementene virket å være lenker på en nettside og tab-navigasjon går innom alle lenker 
+                 tenkte jeg i dette tilfellet at dette var en mer ryddig og oversiktlig løsning -->
+                <a href="#">
+                    <article id="el">
+                        <h3>Elektronikk</h3> <!-- Kategoritittel for elektronikk; deler opp seksjonen i artikler for spesifikke kategorier -->
+                    </article>
+                </a>
+                <a href="#">
+                    <article id="fashion">
                     <h3>Mote og tilbehør</h3> <!-- Kategoritittel for mote -->
-                </article>
-                <article id="home">
+                    </article>
+                </a>
+                <a href="#">
+                    <article id="home">
                     <h3>Hjem og interiør</h3> <!-- Kategoritittel for hjem og interiør -->
-                </article>
+                    </article>
+                </a>
             </section>
             <section id="news">
                 <h2>Nyheter</h2> <!-- Underoverskrift for nyhetsseksjonen -->
@@ -170,39 +189,66 @@
             <section id="popular">
                 <h2>Populære kategorier</h2> <!-- Underoverskrift for populære kategorier -->
                 <article>
+                    <a href="#">
                     <img src="https://picsum.photos/id/152/400/400" alt="lilla blomst foto"> <!-- Bilde for populær kategori, valgte et spesifikt bilde og la til alt tekst -->
+                    </a>
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
                 </article>
                 <!-- Flere artikkelblokker for flere populære kategorier -->
                 <article>
+                    <a href="#">
                     <img src="https://picsum.photos/id/152/400/400" alt="lilla blomst foto"> <!-- Bilde for populær kategori, valgte et spesifikt bilde og la til alt tekst -->
+                    </a>
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
                 </article>
                 <article>
+                    <a href="#">
                     <img src="https://picsum.photos/id/152/400/400" alt="lilla blomst foto"> <!-- Bilde for populær kategori, valgte et spesifikt bilde og la til alt tekst -->
+                    </a>
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
                 </article>
                 <article>
+                    <a href="#">
                     <img src="https://picsum.photos/id/152/400/400" alt="lilla blomst foto"> <!-- Bilde for populær kategori, valgte et spesifikt bilde og la til alt tekst -->
+                    </a>
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
                 </article>
                 <article>
+                    <a href="#">
                     <img src="https://picsum.photos/id/152/400/400" alt="lilla blomst foto"> <!-- Bilde for populær kategori, valgte et spesifikt bilde og la til alt tekst -->
+                    </a>
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
                 </article>
                 <article>
+                    <a href="0">
                     <img src="https://picsum.photos/id/152/400/400" alt="lilla blomst foto"> <!-- Bilde for populær kategori, valgte et spesifikt bilde og la til alt tekst -->
+                    </a>
                     <h3>Dolor sit amet</h3> <!-- Navn på populær kategori -->
                 </article>
             </section>
         </main>
         <footer>
-            <a href="index.html" class="logo"><img src="https://picsum.photos/id/40/100/100?grayscale" alt="navn-på-bedrift logo i gråtoner"></a> <!-- Gråtonelogo i bunnteksten som også peker til hjemmesiden, endret alt-tekst -->
+            <!-- satt footer-logo til tabindex="-1" for å hoppe over, tanken her var at hvis accesskey hadde fungert hadde det vært 
+             dobbelt opp med muligheter for å navigere tilbake til toppen av siden og stoppet innom denne lenken hadde vært repetetivt og kanskje forvirrende 
+             iom at dette ikke nødvendigvis er en veldig tydelig lenke tilbake til start -->
+            <a href="index.html" class="logo" tabindex="-1"><img src="https://picsum.photos/id/40/100/100?grayscale" alt="navn-på-bedrift logo i gråtoner"></a> <!-- Gråtonelogo i bunnteksten som også peker til hjemmesiden, endret alt-tekst -->
             <p>Følg oss på sosiale medier!</p> <!--La til tekst for å gi informasjon om lenkenes funksjon-->
             <ul class="some"> <!-- Sosiale medier-ikoner -->
-                <li><i class="fa-brands fa-facebook-f" aria-label="Facebook-ikon"></i></li> <!-- Facebook-ikon, la til aria-label -->
-                <li><i class="fa-brands fa-instagram" aria-label="Instagram-ikon"></i></li> <!-- Instagram-ikon, la til aria-label -->
-                <li><i class="fa-brands fa-pinterest-p" aria-label="Pinterest-ikon"></i></li> <!-- Pinterest-ikon, la til aria-label -->
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f" aria-label="Facebook-ikon"></i>
+                    </a>
+                </li> <!-- Facebook-ikon, la til aria-label -->
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram" aria-label="Instagram-ikon"></i>
+                    </a>
+                </li> <!-- Instagram-ikon, la til aria-label -->
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-pinterest-p" aria-label="Pinterest-ikon"></i>
+                    </a>
+                </li> <!-- Pinterest-ikon, la til aria-label -->
             </ul>
         </footer>
     </div>  

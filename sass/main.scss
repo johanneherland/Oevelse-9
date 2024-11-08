@@ -166,6 +166,12 @@ nav{
        Hvordan: Flexbox plasserer innholdet nederst i artikkelen.
     */
 
+    a{
+        text-decoration: none;
+        color: #000
+
+    }
+
     h2{
         @include grid-placement("1/3","1/2");
     }
@@ -227,7 +233,7 @@ nav{
                 margin: 0.5rem 0;
                 li{
                     &:first-child {
-                        color: #a6a6a6;
+                        color: #414141; /* oppdaterte fontfarge for å øke kontrast */
                         text-transform: uppercase;
                     }
                 }
@@ -272,6 +278,40 @@ nav{
    Hvordan: Border-radius settes til 100% for runde hjørner.
 */
 
+/* Jeg var usikker på nøyaktig hvordan jeg lager en skip-meny, dette er hentet fra eksempelet fra forelesning 25.10 med små endringer */
+.skip { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* plasserer skip-menyen øverst til venstre på nettsiden */
+    
+    ul {
+        list-style: none; /* fjerner punktmarkering på listen */
+        background-color: transparent; /* fjerner bakgrunnsfarge fra navigasjon */
+
+        li {
+            a {
+                position: absolute;
+                left: -9999px;
+                /* flytter lenken utenfor synsfeltet, den er nå tilgjengelig for skjermlesere og tastaturnavigasjon uten å være synlig på siden */
+
+                &:focus {
+                    position: static;
+                    left: auto;
+                    margin: 1rem;
+                    padding: 0.5rem 1rem;
+                    background-color: #000;
+                    color: #fff;
+                    border-radius: 4px;
+                    z-index: 1000;
+                    text-decoration: none;
+                    /* passer på at lenken vises tydelig når den er fokusert */
+                }
+            }
+        }
+    }
+}
+
 img{
     width: 100%;
     border-radius: 25px;
@@ -306,6 +346,7 @@ footer{
 
         i{
             font-size: 20px;
+            color: #000;
         }
     }
 }
